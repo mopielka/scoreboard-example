@@ -23,8 +23,8 @@ export const UpdateScoreModal: React.FC<Props> = ({ game, onComplete }) => {
 
   return (
     <FormDialog title="Update score">
-      <TextField label={game.homeTeamName} defaultValue={game.homeScore} onChange={(event) => setHomeScore(Number(event.target.value))} />
-      <TextField label={game.awayTeamName} defaultValue={game.awayScore} onChange={(event) => setAwayScore(Number(event.target.value))} />
+      <TextField label={game.homeTeamName} defaultValue={game.homeScore} type="number" onChange={(event) => setHomeScore(Number(event.target.value))} />
+      <TextField label={game.awayTeamName} defaultValue={game.awayScore} type="number" onChange={(event) => setAwayScore(Number(event.target.value))} />
       <Button variant="outlined" onClick={onComplete}>Cancel</Button>
       <Button variant="contained" onClick={onSubmit}>Apply</Button>
     </FormDialog>
