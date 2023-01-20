@@ -4,7 +4,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import React, {useState} from "react";
 import type {Game, Scoreboard as ScoreboardType} from "@mopielka/sportradar-scoreboard/dist/types";
 import {useAppDispatch, useAppSelector} from "../hooks/redux";
@@ -21,7 +20,7 @@ export const Scoreboard: React.FC = () => {
 
   return (
     <>
-      <TableContainer component={Paper}>
+      <TableContainer sx={{ marginBottom: '10px' }}>
         <Table sx={{ minWidth: 650 }} aria-label="Scoreboard">
           <TableHead>
             <TableRow>

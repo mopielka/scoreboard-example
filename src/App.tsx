@@ -13,11 +13,11 @@ const App: React.FC = () => {
   return (
     <>
       <Box>
-        <AppBar position="static">
-          <Typography variant="h1">Sportradar's scoreboard</Typography>
+        <AppBar position="static" sx={{ padding: '10px' }}>
+          <Typography variant="h6">Sportradar&apos;s scoreboard</Typography>
         </AppBar>
       </Box>
-      <Container maxWidth="md" component={Paper}>
+      <Container maxWidth="md" component={Paper} sx={{ padding: '10px', margin: '10px auto' }}>
         <Scoreboard />
         <Button variant="outlined" onClick={() => setNewGameModalOpen(true)}>New game</Button>
         { newGameModalOpen && <NewGameModal onComplete={() => setNewGameModalOpen(false)} /> }

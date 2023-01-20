@@ -1,11 +1,10 @@
 import React, {useState} from "react";
 import {Game} from "@mopielka/sportradar-scoreboard/dist/types";
-import Dialog from "@mui/material/Dialog";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import {useAppDispatch} from "../hooks/redux";
 import {updateScore} from "../reducers/scoreboard";
-import {Typography} from "@mui/material";
+import {FormDialog} from "./FormDialog";
 
 interface Props {
   game: Game,
@@ -23,12 +22,11 @@ export const UpdateScoreModal: React.FC<Props> = ({ game, onComplete }) => {
   }
 
   return (
-    <Dialog open={true}>
-      <Typography variant="h2">Update score</Typography>
+    <FormDialog title="Update score">
       <TextField label={game.homeTeamName} defaultValue={game.homeScore} onChange={(event) => setHomeScore(Number(event.target.value))} />
       <TextField label={game.awayTeamName} defaultValue={game.awayScore} onChange={(event) => setAwayScore(Number(event.target.value))} />
       <Button variant="outlined" onClick={onComplete}>Cancel</Button>
       <Button variant="contained" onClick={onSubmit}>Apply</Button>
-    </Dialog>
+    </FormDialog>
   )
 }
